@@ -1,0 +1,1256 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Roboto:wght@300&family=VT323&display=swap" rel="stylesheet">
+<style>        
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  transition:all .3s;
+  user-select:none;
+}
+
+
+
+body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  background:radial-gradient(#bfede6,#0b8e7a);
+  font-family: 'Open Sans', sans-serif;
+  overflow:hidden;
+}
+
+
+.container{
+  width:90vmin;
+  height:90vmin;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  
+}
+
+
+.radio{
+  width:86vmin;
+  height:68vmin;
+  position:relative;
+}
+
+
+.radio .handler{
+  width:100%;
+  height:50vmin;
+  position:absolute;
+  top:-12vmin;
+  left:0vmin;
+  border-radius:10vmin;
+  z-index:-1;
+  border:2vmin solid #111;
+  
+}
+
+
+.radio .handler:after{
+  content:"";
+  width:68vmin;
+  height:6vmin;
+  background:#1C322F;
+  position:absolute;
+  left:50%;
+  top:-3.9vmin;
+  transform:translate(-50%,0);
+  border-radius:.8vmin;
+  box-shadow:inset 0 0 1vmin #30403E;
+}
+
+
+.radio .handler .left{
+  width:5vmin;
+  height:15vmin;
+  display:block;
+  position:absolute;
+  left:-5vmin;
+  bottom:5vmin;
+  border-radius:1.5vmin;
+  background:#d38585;
+}
+
+.radio .handler .right{
+  width:5vmin;
+  height:15vmin;
+  display:block;
+  position:absolute;
+  right:-5vmin;
+  bottom:5vmin;
+  border-radius:1.5vmin;
+  background:#d38585;
+}
+
+.radio .body{
+  width:100%;
+  height:100%;
+  border-radius:17vmin 17vmin 8vmin 8vmin;
+  overflow:hidden;
+  background:#daf1ee;
+  box-shadow:inset 0 0 5vmin #111311;
+}
+
+
+.radio:before{
+  content:"";
+  width:100%;
+  height:10vmin;
+  background:#000;
+  position:absolute;
+  bottom:-10vmin;
+  border-radius: 8vmin 8vmin;
+  filter:blur(45px);
+  z-index:0;
+}
+
+.radio .body .upper-body{
+  width:100%;
+  height:20vmin;
+  position:relative;
+  border-bottom:.7vmin solid #d78dd8;
+  color:#535c57;
+}
+
+
+.radio .body .upper-body .btns{
+  text-transform:uppercase;
+  display:flex;
+  gap:2vmin;
+  width:30vmin;
+  font-size:1.9vmin;
+  position:absolute;
+  bottom:1.5vmin;
+  left:7vmin;
+}
+
+.radio .body .upper-body .btns span{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:.8vmin;
+  font-weight:700;
+}
+
+
+.radio .body .upper-body .btns span .artistes-btn{
+  background-image: conic-gradient(#777 80deg, #e85353 90deg, #777 130deg,#777 250deg, #eee 290deg, #777 300deg);
+  box-shadow:0 0 0 .2vmin #bfc1c2,
+             -.22vmin -.1vmin 0 .15vmin #333,
+             0 0 0 .5vmin #000;
+  width:7vmin;
+  height:7vmin;
+  border-radius:50%;
+  position:relative;
+  cursor:pointer;
+}
+
+
+.artistes-btn-rotate{
+  transform:rotate(260deg);
+}
+
+
+.radio .body .upper-body .btns span .artistes-btn .small-circle-one,
+.radio .body .upper-body .btns span .artistes-btn .small-circle-two,
+.radio .body .upper-body .btns span .artistes-btn .small-circle-three,
+.radio .body .upper-body .btns span .artistes-btn .small-circle-four{
+  width:.5vmin;
+  height:.5vmin;
+  border:.01vmin solid #29a1dd;
+  border-radius:50%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+
+.radio .body .upper-body .play-btns{
+  background-image: conic-gradient(#777 80deg, #eee 90deg, #b1aaaa 130deg,#aaa3a3 250deg, #eee 290deg, #c4bfbf 300deg);
+  box-shadow:0 0 0 .4vmin #bfc1c2,
+             -.4vmin .1vmin 0 .4vmin #333,
+             0 0 0 1vmin #000;
+  width:20vmin;
+  height:20vmin;
+  position:absolute;
+  bottom:-9vmin;
+  right:6vmin;
+  border-radius:50%;
+  z-index:2;
+  cursor:pointer;
+}
+
+
+
+.radio .body .upper-body .play-btns .small-circle{
+  width:.68vmin;
+  height:.68vmin;
+  border:.01vmin solid #249bd7;
+  border-radius:50%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+
+
+.radio .body .mid-body{
+  width:100%;
+  height:20vmin;
+  position:relative;
+  background:#111;
+}
+
+
+.radio .body .mid-body .screen{
+  background:#000;
+  color:#6bcbea;
+  width:40vmin;
+  height:15vmin;
+  position:absolute;
+  top:50%;
+  left:7vmin;
+  transform:translate(0%,-50%);
+  padding:.2vmin .25vmin;
+  text-transform:uppercase;
+  font-family: 'VT323', monospace;
+  overflow:hidden;
+  outline:.2vmin solid #3B3B3B;
+  border-radius:1px;
+  box-shadow:0 0 .2vmin #000;
+}
+
+
+.radio .body .mid-body .screen p{
+  font-size:4vmin;
+  line-height:3.5vmin;
+  padding:0 .8vmin;
+}
+
+
+.radio .body .mid-body .screen .name{
+  margin-top:2vmin;
+  font-weight:700;
+}
+
+.radio .body .mid-body .screen .artist{
+  font-weight:100;
+}
+
+
+.radio .body .mid-body .screen .fa{
+  padding:0 .2vmin;
+  display:block;
+  text-align:left;
+  rotate:180deg;
+  font-size:2.5vmin;
+  display:none;
+}
+
+
+
+.radio .body .mid-body .forward-backward-btns{
+  position:absolute;
+  bottom:2vmin;
+  right:5vmin;
+  display:flex;
+  gap:2vmin;
+}
+
+
+.radio .body .mid-body .forward-backward-btns .fa{
+  background:#0A0A0A;
+  color:#f0e9ee;
+  font-size:2.2vmin;
+  width:5vmin;
+  height:5vmin;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow: inset .01vmin .02vmin .1vmin #bfc1c2,
+            inset -.01vmin -.02vmin .1vmin #bfc1c2,
+                  0 0 0 .2vmin #000;
+  cursor:pointer;
+}
+
+
+.radio .body .mid-body .forward-backward-btns .fa:active{
+  font-size:2vmin;
+}
+
+.radio .body .lower-body{
+  width:100%;
+  height:100%;
+  border-top:.7vmin solid #e46ce4;
+}
+
+
+
+.radio .body .lower-body .lines{
+  width:100%;
+  height:.5vmin;
+  margin:1.02vmin 0;
+  padding:0 0vmin;
+  background:#717473;
+  box-shadow:0 0 1px .2px #b5b2b2;
+  border-radius:50px;
+}
+
+.radio .body .lower-body .lines.lines3,
+.radio .body .lower-body .lines.lines4,
+.radio .body .lower-body .lines.lines5,
+.radio .body .lower-body .lines.lines6,
+.radio .body .lower-body .lines.lines7,
+.radio .body .lower-body .lines.lines8,
+.radio .body .lower-body .lines.lines9,
+.radio .body .lower-body .lines.lines10,
+.radio .body .lower-body .lines.lines11,
+.radio .body .lower-body .lines.lines12,
+.radio .body .lower-body .lines.lines13,
+.radio .body .lower-body .lines.lines14{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.radio .body .lower-body .lines .lineBox{
+  width:40vmin;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.radio .body .lower-body .lines .lineBox .lineOne{
+  background:#0e0f0f;
+  width:2.5vmin;
+  height:.2vmin;
+  margin: 0 .3vmin;
+  margin-top:1.50vmin;
+  border-radius:150px;
+}
+
+</style>
+    </head>
+    <body>
+        
+
+
+<!------ Saregama Music Player ---->
+
+<div class="container">
+  <div class="radio">
+    <div class="body">
+      <div class="upper-body">
+        <div class="btns">
+          <span>
+            <p class="label">hindi</p>
+            <div class="artistes-btn"></div>
+          </span>
+          
+          <span>
+            <p class="label">english</p>
+            <div class="artistes-btn"></div>
+          </span>
+          
+          <span>
+            <p class="label">telugu</p>
+            <div class="artistes-btn"></div>
+          </span>
+
+          <span>
+            <p class="label">Pause</p>
+            <div class="artistes-btn"></div>
+          </span>
+        </div><!----- btns ----->
+        
+        <div class="play-btns" title="volume controller"></div><!---- play-btns ---->
+      </div><!--- upper body ---->
+      
+      <div class="mid-body">
+        
+        <div class="screen">
+          <i class="fa fa-battery-half"></i>
+          <p class="name"></p>
+          <p class="artist"></p>
+          <audio id="music" src="" type="audio/mp3">
+        </div><!---- screen ----->
+        <div class="forward-backward-btns">
+          <i class="fa fa-angle-left"></i>
+          <i class="fa fa-angle-right"></i>
+        </div><!----- forward-backward-btns ---->
+      </div><!--- mid body ---->
+      
+      <div class="lower-body">
+        
+      </div><!--- lower body ---->
+      
+      
+    </div>
+    <!-----body----->
+    
+    <div class="handler">
+      <span class="left"></span>
+      
+      <span class="right"></span>
+    </div><!--- handler --->
+      
+   <audio id="intro-music" src="https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/Saregama.mp3" type="audio/mp3" preload="auto"><!--- inro audio --->
+    
+  </div>
+  <!----- radio ----->
+</div>
+<!-----container----->
+    
+
+
+<script>
+    //js power
+
+let lowerBody = document.querySelector('.lower-body');
+
+let playBtn = document.querySelector('.play-btns');
+let artistesBtn = document.querySelectorAll('.artistes-btn');
+
+
+let introMusic = document.querySelector('#intro-music');
+
+//if window load intro audio play only one time
+setTimeout(function() {
+  introMusic.currentTime=28.5;
+  introMusic.play();
+  },0); 
+
+  
+  //create line div 18 times
+  for(var i = 0; i < 18; i++){
+    
+    let line = document.createElement('div');
+    line.classList.add('lines',`lines${i}`);
+
+    lowerBody.appendChild(line);
+    
+
+  }
+  
+  //create line box
+  let lineOneBox = document.createElement('div');
+  let lineOneBox2 = document.createElement('div');
+  //add class
+  lineOneBox.classList.add('lineBox');
+  lineOneBox2.classList.add('lineBox');
+  
+  //get class
+  let lines3 = document.querySelectorAll('.lines3')[0];
+  
+  //join line and box
+  lines3.appendChild(lineOneBox);
+  lines3.appendChild(lineOneBox2);
+  
+  //create div speaker line
+  for(var i1 = 0; i1 < 5; i1++){
+    
+    let lineOne = document.createElement('div');
+    lineOne.classList.add('lineOne');
+    
+    lineOneBox.appendChild(lineOne);
+    
+  }
+  
+  
+    //create div speaker line
+  for(var i1 = 0; i1 < 5; i1++){
+    
+    let lineOne = document.createElement('div');
+    lineOne.classList.add('lineOne');
+    
+    lineOneBox2.appendChild(lineOne);
+    
+  }
+  
+ 
+
+
+  //create line box Two
+  let lineTwoBox = document.createElement('div');
+  let lineTwoBox2 = document.createElement('div');
+  //add class
+  lineTwoBox.classList.add('lineBox');
+  lineTwoBox2.classList.add('lineBox');
+  
+  //get class
+  let lines4 = document.querySelectorAll('.lines4')[0];
+  
+  //join line and box
+  lines4.appendChild(lineTwoBox);
+  lines4.appendChild(lineTwoBox2);
+  
+  //create div speaker line
+  for(var i1 = 0; i1 < 6; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineTwoBox.appendChild(lineTwo);
+    
+  }
+  
+    //create div speaker line
+  for(var i1 = 0; i1 < 6; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineTwoBox2.appendChild(lineTwo);
+    
+  }
+  
+  
+  
+  //create line box Three
+  let lineThreeBox = document.createElement('div');
+  let lineThreeBox2 = document.createElement('div');
+  //add class
+  lineThreeBox.classList.add('lineBox');
+  lineThreeBox2.classList.add('lineBox');
+  
+  //get class
+  let lines5 = document.querySelectorAll('.lines5')[0];
+  
+  //join line and box
+  lines5.appendChild(lineThreeBox);
+  lines5.appendChild(lineThreeBox2);
+  
+  //create div speaker line
+  for(var i1 = 0; i1 < 6; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineThreeBox.appendChild(lineTwo);
+    
+  }
+  
+    //create div speaker line
+  for(var i1 = 0; i1 < 6; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineThreeBox2.appendChild(lineTwo);
+    
+  }
+  
+  
+  //create line box five
+  let lineFourBox = document.createElement('div');
+  let lineFourBox2 = document.createElement('div');
+  //add class
+  lineFourBox.classList.add('lineBox');
+  lineFourBox2.classList.add('lineBox');
+  
+  //get class
+  let lines6 = document.querySelectorAll('.lines6')[0];
+  
+  //join line and box
+  lines6.appendChild(lineFourBox);
+  lines6.appendChild(lineFourBox2);
+  
+  //create div speaker line
+  for(var i1 = 0; i1 < 7; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineFourBox.appendChild(lineTwo);
+    
+  }
+  
+    //create div speaker line
+  for(var i1 = 0; i1 < 7; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineFourBox2.appendChild(lineTwo);
+    
+  }
+  
+
+  
+  //create line box Six
+  let lineSixBox = document.createElement('div');
+  let lineSixBox2 = document.createElement('div');
+  //add class
+  lineSixBox.classList.add('lineBox');
+  lineSixBox2.classList.add('lineBox');
+  
+  //get class
+  let lines7 = document.querySelectorAll('.lines7')[0];
+  
+  //join line and box
+  lines7.appendChild(lineSixBox);
+  lines7.appendChild(lineSixBox2);
+  
+  //create div speaker line
+  for(var i1 = 0; i1 < 7; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineSixBox.appendChild(lineTwo);
+    
+  }
+  
+    //create div speaker line
+  for(var i1 = 0; i1 < 7; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineSixBox2.appendChild(lineTwo);
+    
+  }
+  
+
+  //create line box Seven
+  let lineSevenBox = document.createElement('div');
+  let lineSevenBox2 = document.createElement('div');
+  //add class
+  lineSevenBox.classList.add('lineBox');
+  lineSevenBox2.classList.add('lineBox');
+  
+  //get class
+  let lines8 = document.querySelectorAll('.lines8')[0];
+  
+  //join line and box
+  lines8.appendChild(lineSevenBox);
+  lines8.appendChild(lineSevenBox2);
+  
+  //create div speaker line
+  for(var i1 = 0; i1 < 7; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineSevenBox.appendChild(lineTwo);
+    
+  }
+  
+    //create div speaker line
+  for(var i1 = 0; i1 < 7; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineSevenBox2.appendChild(lineTwo);
+    
+  }
+
+  
+  //create line box eighth
+  let lineeighthBox = document.createElement('div');
+  let lineeighthBox2 = document.createElement('div');
+  //add class
+  lineeighthBox.classList.add('lineBox');
+  lineeighthBox2.classList.add('lineBox');
+  
+  //get class
+  let lines9 = document.querySelectorAll('.lines9')[0];
+  
+  //join line and box
+  lines9.appendChild(lineeighthBox);
+  lines9.appendChild(lineeighthBox2);
+  
+  //create div speaker line
+  for(var i1 = 0; i1 < 7; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineeighthBox.appendChild(lineTwo);
+    
+  }
+  
+    //create div speaker line
+  for(var i1 = 0; i1 < 7; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineeighthBox2.appendChild(lineTwo);
+    
+  }
+
+  
+  //create line box nine
+  let linenineBox = document.createElement('div');
+  let linenineBox2 = document.createElement('div');
+  //add class
+  linenineBox.classList.add('lineBox');
+  linenineBox2.classList.add('lineBox');
+  
+  //get class
+  let lines10 = document.querySelectorAll('.lines10')[0];
+  
+  //join line and box
+  lines10.appendChild(linenineBox);
+  lines10.appendChild(linenineBox2);
+  
+  //create div speaker line
+  for(var i1 = 0; i1 < 7; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    linenineBox.appendChild(lineTwo);
+    
+  }
+  
+    //create div speaker line
+  for(var i1 = 0; i1 < 7; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    linenineBox2.appendChild(lineTwo);
+    
+  }
+  
+  
+  //create line box Ten
+  let lineTenBox = document.createElement('div');
+  let lineTenBox2 = document.createElement('div');
+  //add class
+  lineTenBox.classList.add('lineBox');
+  lineTenBox2.classList.add('lineBox');
+  
+  //get class
+  let lines11 = document.querySelectorAll('.lines11')[0];
+  
+  //join line and box
+  lines11.appendChild(lineTenBox);
+  lines11.appendChild(lineTenBox2);
+  
+  //create div speaker line
+  for(var i1 = 0; i1 < 7; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineTenBox.appendChild(lineTwo);
+    
+  }
+  
+    //create div speaker line
+  for(var i1 = 0; i1 < 7; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineTenBox2.appendChild(lineTwo);
+    
+  }
+  
+  
+  
+  //create line box Eleven
+  let lineElevenBox = document.createElement('div');
+  let lineElevenBox2 = document.createElement('div');
+  //add class
+  lineElevenBox.classList.add('lineBox');
+  lineElevenBox2.classList.add('lineBox');
+  
+  //get class
+  let lines12 = document.querySelectorAll('.lines12')[0];
+  
+  //join line and box
+  lines12.appendChild(lineElevenBox);
+  lines12.appendChild(lineElevenBox2);
+  
+  //create div speaker line
+  for(var i1 = 0; i1 < 6; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineElevenBox.appendChild(lineTwo);
+    
+  }
+  
+    //create div speaker line
+  for(var i1 = 0; i1 < 6; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineElevenBox2.appendChild(lineTwo);
+    
+  }
+  
+  
+  //create line box Twelve
+  let lineTwelveBox = document.createElement('div');
+  let lineTwelveBox2 = document.createElement('div');
+  //add class
+  lineTwelveBox.classList.add('lineBox');
+  lineTwelveBox2.classList.add('lineBox');
+  
+  //get class
+  let lines13 = document.querySelectorAll('.lines13')[0];
+  
+  //join line and box
+  lines13.appendChild(lineTwelveBox);
+  lines13.appendChild(lineTwelveBox2);
+  
+  //create div speaker line
+  for(var i1 = 0; i1 < 6; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineTwelveBox.appendChild(lineTwo);
+    
+  }
+  
+    //create div speaker line
+  for(var i1 = 0; i1 < 6; i1++){
+    
+    let lineTwo = document.createElement('div');
+    lineTwo.classList.add('lineOne');
+    
+    lineTwelveBox2.appendChild(lineTwo);
+    
+  }
+  
+  
+  //create line box Thirteen
+  let lineThirteenBox = document.createElement('div');
+  let lineThirteenBox2 = document.createElement('div');
+  //add class
+  lineThirteenBox.classList.add('lineBox');
+  lineThirteenBox2.classList.add('lineBox');
+  
+  //get class
+  let lines14 = document.querySelectorAll('.lines14')[0];
+  
+  //join line and box
+  lines14.appendChild(lineThirteenBox);
+  lines14.appendChild(lineThirteenBox2);
+  
+  //create div speaker line
+  for(var i1 = 0; i1 < 5; i1++){
+    
+    let lineOne = document.createElement('div');
+    lineOne.classList.add('lineOne');
+    
+    lineThirteenBox.appendChild(lineOne);
+    
+  }
+  
+  
+    //create div speaker line
+  for(var i1 = 0; i1 < 5; i1++){
+    
+    let lineOne = document.createElement('div');
+    lineOne.classList.add('lineOne');
+    
+    lineThirteenBox2.appendChild(lineOne);
+    
+  }
+  
+
+
+
+  
+  
+    //play buttton inside multiple circle
+
+
+  for(var icircle=0; icircle<30; icircle++){
+    
+    let small_circle = document.createElement('div');
+    
+    small_circle.classList.add('small-circle');
+    
+    playBtn.appendChild(small_circle);
+    
+    let scircle = document.querySelectorAll('.small-circle');
+    
+    for(var si=0; si<scircle.length; si++){
+      
+      scircle[si].style.width = `${.68 * si}vmin`;
+      scircle[si].style.height = `${.68 * si}vmin`;
+      
+    }
+    
+  }
+
+
+
+
+for(var icircle1=0; icircle1<13; icircle1++){
+    
+    let small_circle2 = document.createElement('div');
+    
+    small_circle2.classList.add('small-circle-one');
+    
+                  artistesBtn[0].appendChild(small_circle2);
+    
+    let scircle2 = document.querySelectorAll('.small-circle-one');
+    
+    for(var si1=0; si1<scircle2.length; si1++){
+      
+      scircle2[si1].style.width = `${.58 * si1}vmin`;
+      scircle2[si1].style.height = `${.58 * si1}vmin`;
+      
+    }
+    
+  }
+
+for(var icircle2=0; icircle2<13; icircle2++){
+    
+    let small_circle3 = document.createElement('div');
+    
+    small_circle3.classList.add('small-circle-two');
+    
+                  artistesBtn[1].appendChild(small_circle3);
+    
+    let scircle3 = document.querySelectorAll('.small-circle-two');
+    
+    for(var si2=0; si2<scircle3.length; si2++){
+      
+      scircle3[si2].style.width = `${.58 * si2}vmin`;
+      scircle3[si2].style.height = `${.58 * si2}vmin`;
+      
+    }
+    
+  }
+
+for(var icircle3=0; icircle3<13; icircle3++){
+    
+    let small_circle4 = document.createElement('div');
+    
+    small_circle4.classList.add('small-circle-three');
+    
+                  artistesBtn[2].appendChild(small_circle4);
+    
+    let scircle4 = document.querySelectorAll('.small-circle-three');
+    
+    for(var si3=0; si3<scircle4.length; si3++){
+      
+      scircle4[si3].style.width = `${.58 * si3}vmin`;
+      scircle4[si3].style.height = `${.58 * si3}vmin`;
+      
+    }
+    
+  }
+
+
+
+
+
+//fetch fake song api
+
+let artistes_btn = document.querySelectorAll('.artistes-btn');
+
+let artist = document.querySelector('.name');
+let songName = document.querySelector('.artist');
+
+let music = document.querySelector('#music');
+
+let leftBtn = document.querySelector('.fa-angle-left');
+let rightBtn = document.querySelector('.fa-angle-right');
+
+
+
+
+//for hindi section
+artistes_btn[0].addEventListener('click',()=>{
+  
+  //add class rotate animatiion
+ artistes_btn[0].classList.add('artistes-btn-rotate');
+ artistes_btn[1].classList.remove('artistes-btn-rotate');
+ artistes_btn[2].classList.remove('artistes-btn-rotate');
+  
+  //add betray icon
+  document.querySelector('.fa-battery-half').style.display="block";
+  
+  //fetch hindi api
+ const  songsHindi = [
+
+        {
+            "name": "Malang",
+            "singer": "Siddharth Mahadevan",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/Malang.mp3"
+        },
+        {
+            "name": "Voh Dekhnay Mein",
+            "singer": "Ali Zafar",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/VohDekhnayMein1.mp3"
+        },
+        {
+            "name": "SHIKAYAT",
+            "singer": "AUR",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/SHIKAYAT.mp3"
+        },
+        {
+            "name": "Tu Tu Hai Wahi",
+            "singer": "Kishore Kumar",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/YehVaadaRaha.mp3"
+        },
+        {
+            "name": "Nahin Maloom",
+            "singer": "Ali Zafar",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/TotalSiyapaa.mp3"
+        },
+        {
+            "name": "Main Tera Rasta Dekhunga",
+            "singer": "Shadab Faridi",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/MainTeraRastaDekhunga.mp3"
+        }
+        
+    ];
+  
+  
+  const load = (songsHindi) =>{
+    
+  songName.innerText = songsHindi.name;
+  artist.innerText = songsHindi.singer;
+  music.src = songsHindi.audio;
+  music.play();
+    
+  }
+  
+  
+//next and pre song load
+let index = 0;
+
+const nextSong = () =>{
+  index = (index + 1) % songsHindi.length;
+  load(songsHindi[index]);
+  music.play();
+}
+
+
+const prevSong = () =>{
+  index = (index - 1 + songsHindi.length) % songsHindi.length;
+  load(songsHindi[index]);
+  music.play();
+}
+
+
+rightBtn.addEventListener("click", nextSong);
+leftBtn.addEventListener("click", prevSong);
+  
+//next song automatic if song ended!
+music.addEventListener("ended", nextSong);
+
+ load(songsHindi[index]); 
+});
+
+
+
+//for english section
+artistes_btn[1].addEventListener('click',()=>{
+  
+  //add class rotate animatiion
+ artistes_btn[0].classList.remove('artistes-btn-rotate');
+ artistes_btn[1].classList.add('artistes-btn-rotate');
+ artistes_btn[2].classList.remove('artistes-btn-rotate');
+  
+    //add betray icon
+  document.querySelector('.fa-battery-half').style.display="block";
+  
+  //fetch english api
+ const  songsEnglish = [
+
+        {
+            "name": "Night Changes",
+            "singer": "One Direction",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/NightChanges.mp3"
+        },
+        {
+            "name": "Let Me Down Slowly",
+            "singer": "Alec Benjamin",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/LetMeDownSlowly.mp3"
+        },
+        {
+            "name": "Love Me Like You Do",
+            "singer": "Ellie Goulding",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/LoveMeLikeYouDo.mp3"
+        },
+        {
+            "name": "Señorita",
+            "singer": "Shawn Mendes",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/Senorita.mp3"
+        },
+        {
+            "name": "Closer",
+            "singer": "Chainsmokers",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/Closer.mp3"
+        }
+    ];
+  
+  
+  const load = (songsEnglish) =>{
+    
+  songName.innerText = songsEnglish.name;
+  artist.innerText = songsEnglish.singer;
+  music.src = songsEnglish.audio;
+  music.play();
+  }
+  
+  
+//next and pre song load
+let index = 0;
+
+const nextSong = () =>{
+  index = (index + 1) % songsEnglish.length;
+  load(songsEnglish[index]);
+  music.play();
+}
+
+
+const prevSong = () =>{
+  index = (index - 1 + songsEnglish.length) % songsEnglish.length;
+  load(songsEnglish[index]);
+  music.play();
+}
+
+
+rightBtn.addEventListener("click", nextSong);
+leftBtn.addEventListener("click", prevSong);
+  
+//next song automatic if song ended!
+music.addEventListener("ended", nextSong);
+
+ load(songsEnglish[index]); 
+});
+
+
+
+//for Telugu section
+artistes_btn[2].addEventListener('click',()=>{
+  
+    //add class rotate animatiion
+ artistes_btn[0].classList.remove('artistes-btn-rotate');
+ artistes_btn[1].classList.remove('artistes-btn-rotate');
+ artistes_btn[2].classList.add('artistes-btn-rotate');
+  
+    //add betray icon
+  document.querySelector('.fa-battery-half').style.display="block";
+  
+  //fetch telugu api
+ const  songsTelugu = [
+
+        {
+            "name": "Naa Ready",
+            "singer": "Anirudh Ravichander",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/NaaReady.mp3"
+        },
+        {
+            "name": "Arabic Kuthu",
+            "singer": "Anirudh Ravichander",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/ArabicKuthu.mp3"
+        },
+        {
+            "name": "Badass",
+            "singer": "Anirudh Ravichander",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/Badass.mp3"
+        },
+        {
+            "name": "Ordinary Person",
+            "singer": "Anirudh Ravichander",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/OrdinaryPerson.mp3"
+        },
+        {
+            "name": "Monster",
+            "singer": "Ravi Basrur",
+            "audio": "https://github.com/Short-Zed/Movie-Responsive-Site/raw/main/Monster.mp3"
+        }
+    ];
+  
+  
+  const load = (songsTelugu) =>{
+    
+  songName.innerText = songsTelugu.name;
+  artist.innerText = songsTelugu.singer;
+  music.src = songsTelugu.audio;
+  music.play();
+  }
+  
+  
+//next and pre song load
+let index = 0;
+
+const nextSong = () =>{
+  index = (index + 1) % songsTelugu.length;
+  load(songsTelugu[index]);
+  music.play();
+}
+
+
+const prevSong = () =>{
+  index = (index - 1 + songsTelugu.length) % songsTelugu.length;
+  load(songsTelugu[index]);
+  music.play();
+}
+
+
+rightBtn.addEventListener("click", nextSong);
+leftBtn.addEventListener("click", prevSong);
+  
+//next song automatic if song ended!
+music.addEventListener("ended", nextSong);
+
+ load(songsTelugu[index]); 
+});
+
+
+
+//volumn btn
+let volumnBtn = document.querySelector('.play-btns');
+
+let boolean = "false";
+
+volumnBtn.addEventListener('click',()=>{
+
+
+  if(boolean == "true"){
+    music.volume = 1;
+    boolean = "false";  volumnBtn.style.transform="rotate(0deg)";
+  }else if(boolean == "false"){
+    music.volume = 0.2;
+    boolean = "mute";
+ volumnBtn.style.transform="rotate(120deg)";
+  }else if(boolean == "mute"){
+    music.volume = 0;
+    boolean = "true";
+ volumnBtn.style.transform="rotate(180deg)";
+  }
+  
+})
+
+</script>
+    </body>
+</html>
